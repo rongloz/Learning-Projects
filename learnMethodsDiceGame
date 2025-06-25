@@ -1,0 +1,52 @@
+Random random = new Random();
+string menuSelection = "";
+
+do
+{
+    Console.WriteLine("Would you like to play? (Y/N)");
+    if (ShouldPlay(menuSelection))
+    {
+        PlayGame();
+    }
+} while (ShouldPlay(menuSelection)); 
+
+void PlayGame()
+{
+    Console.WriteLine("test test");
+
+        var play = true;
+
+        while (play)
+        {
+        // target: between 1 and 5 
+        var target = random.Next(1, 6);
+        var roll = random.Next(1, 7);
+
+            Console.WriteLine($"Roll a number greater than {target} to win!");
+            Console.WriteLine($"You rolled a {roll}");
+            Console.WriteLine(WinOrLose(target, roll));
+            Console.WriteLine("Play again? (Y/N)");
+
+            play = ShouldPlay(menuSelection);
+        }
+}
+
+string WinOrLose(int x, int y)
+{
+    return (y > x) ? "You Win!" : "You lose!";
+}
+
+bool ShouldPlay(string? read)
+{
+    read = Console.ReadLine();
+    if (read != null)
+    {
+        if (read == "y")
+            return true;
+    }
+
+        return false;
+}
+
+
+
