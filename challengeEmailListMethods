@@ -1,0 +1,68 @@
+// Your challenge is to create a method that will display the email address of internal and external employees. 
+// The method should include an optional parameter for the domain name of external employees.
+
+string[,] corporate = 
+{
+    {"Robert", "Bavin"}, {"Simon", "Bright"},
+    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+};
+
+string[,] external = 
+{
+    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+};
+
+string externalDomain = "hayworth.com";
+
+for (int i = 0; i < corporate.GetLength(0); i++) 
+{
+    // display internal email addresses
+}
+
+for (int i = 0; i < external.GetLength(0); i++)
+{
+    // display external email addresses
+}
+
+LetterTwo(corporate);
+LetterTwo(external, email: "@hayworth.com"); 
+
+//Retrieve first two-letters of First name
+void LetterTwo (string[,] name, string email = "@contoso.com")
+{
+    for (int i = 0; i < name.GetLength(0); i++)
+    {
+        char[] arr = name[i, 0].ToLower().ToCharArray(0, 2);
+        Console.Write(arr);
+        Console.Write(name[i, 1].ToLower());
+        Console.Write(email);
+        Console.WriteLine(); 
+    }
+}
+
+//Obtain last name 
+
+/* void LastName(string[,] corporate)
+{
+    for (int i = 0; i < corporate.GetLength(0); i++)
+    {
+        Console.WriteLine(corporate[i, 0]);
+    }
+}
+*/
+
+
+
+
+//Concatenate letters + last name, add email to end using contoso.com as default email  
+
+/* void CombineNames(string[,] corporate, string email = "@contoso.com")
+{
+    for (int i = 0; i < corporate.GetLength(0); i++)
+    {
+        string firstNamePart = LetterTwo(corporate); 
+    }
+}
+*/ 
