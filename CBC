@@ -1,0 +1,59 @@
+decimal valueWBC = WBC(); 
+decimal valueHemoglobin = Hemoglobin();
+decimal valueHematocrit = Hematocrit();
+decimal valuePlatelets = Platelets();
+Console.WriteLine(valueWBC.ToString() + " > " + valueHemoglobin.ToString() + "/" + valueHematocrit.ToString() + " < " + valuePlatelets.ToString());
+
+static decimal Hematocrit()
+{
+   Random random = new Random();
+
+    int randomNumber = random.Next(35, 46);
+    int randomNumber2 = random.Next(1, 10);
+
+    string hematocrit = randomNumber + "." + randomNumber2;
+
+    decimal decimalHematocrit = Decimal.Parse(hematocrit);
+
+    return decimalHematocrit;
+
+}
+
+static decimal Hemoglobin()
+{
+  Random random = new Random();
+
+    int randomNumber = random.Next(10, 14);
+    int randomNumber2 = random.Next(1, 10);
+
+    string hemoglobin = randomNumber + "." + randomNumber2;
+
+    decimal decimalHemoglobin = Decimal.Parse(hemoglobin);
+
+    return decimalHemoglobin;
+
+}
+
+static decimal Platelets()
+{
+  Random random = new Random();
+
+    decimal decimalPlatelets = random.Next(150, 450);
+
+    return decimalPlatelets;
+
+}
+
+static decimal WBC()
+{
+    Random random = new Random();
+
+    int randomNumber = random.Next(4, 11);
+    int randomNumber2 = random.Next(4, 10);
+
+    string WBC = randomNumber + "." + randomNumber2;
+
+    decimal decimalWBC = Decimal.Parse(WBC);
+
+    return decimalWBC;
+}
